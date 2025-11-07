@@ -12,3 +12,74 @@ features:
 strategies:
   numeric: 'mean'
   categoric: 'most_frequent'
+
+feature_store:
+  train_fg: training_feature_group
+  test_fg: testing_feature_group
+  version: 1
+  primary_key:
+    - "id"
+  description: "Spotify Churn System"
+  feature_descriptions:
+    - name: id
+      description: "Unique identifier for each listener"
+
+    # Subscription Type One-Hot Encodings
+    - name: subscription_type_Free
+      description: "Indicates if the user has a Free subscription plan (1 = Free, 0 = otherwise)"
+    - name: subscription_type_Premium
+      description: "Indicates if the user has a Premium subscription plan (1 = Premium, 0 = otherwise)"
+
+    # Country One-Hot Encodings
+    - name: country_AU
+      description: "Listener is from Australia"
+    - name: country_BR
+      description: "Listener is from Brazil"
+    - name: country_CA
+      description: "Listener is from Canada"
+    - name: country_DE
+      description: "Listener is from Germany"
+    - name: country_FR
+      description: "Listener is from France"
+    - name: country_IN
+      description: "Listener is from India"
+    - name: country_PK
+      description: "Listener is from Pakistan"
+    - name: country_RU
+      description: "Listener is from Russia"
+    - name: country_UK
+      description: "Listener is from the United Kingdom"
+    - name: country_US
+      description: "Listener is from the United States"
+
+    # Top Genre One-Hot Encodings
+    - name: top_genre_Classical
+      description: "User’s top genre is Classical music"
+    - name: top_genre_Country
+      description: "User’s top genre is Country music"
+    - name: top_genre_Electronic
+      description: "User’s top genre is Electronic music"
+    - name: top_genre_Hip-Hop
+      description: "User’s top genre is Hip-Hop music"
+    - name: top_genre_Jazz
+      description: "User’s top genre is Jazz music"
+    - name: top_genre_Pop
+      description: "User’s top genre is Pop music"
+    - name: top_genre_Rock
+      description: "User’s top genre is Rock music"
+
+    # Numeric Features
+    - name: avg_daily_minutes
+      description: "Average number of minutes listened per day"
+    - name: number_of_playlists
+      description: "Total number of playlists created by the listener"
+    - name: skips_per_day
+      description: "Average number of songs skipped per day"
+    - name: support_tickets
+      description: "Total support tickets raised by the listener"
+    - name: days_since_last_login
+      description: "Number of days since the listener last logged in"
+
+    # Target
+    - name: churned
+      description: "Binary target variable indicating if the user has churned (1 = churned, 0 = active)"
