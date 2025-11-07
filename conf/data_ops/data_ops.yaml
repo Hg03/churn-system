@@ -1,1 +1,14 @@
 data_url: 'https://gist.githubusercontent.com/Hg03/f7cdc8bd3c32df8a4bf5d14dfc63d0d6/raw/30e1538c8aadaa974660843e024e87db005dd72d/raw.csv'
+
+features:
+  all: ['user_id', 'subscription_type', 'country', 'avg_daily_minutes', 'number_of_playlists', 'top_genre', 'skips_per_day', 'support_tickets', 'days_since_last_login', 'churned']
+  X: ['subscription_type', 'country', 'avg_daily_minutes', 'number_of_playlists', 'top_genre', 'skips_per_day', 'support_tickets', 'days_since_last_login']
+  numeric: ['avg_daily_minutes', 'number_of_playlists', 'skips_per_day', 'support_tickets', 'days_since_last_login']
+  categoric: ['subscription_type', 'country', 'top_genre']
+  nominal: ['subscription_type', 'country', 'top_genre']
+  to_drop: ['user_id']
+  y: ['churned']
+
+strategies:
+  numeric: 'mean'
+  categoric: 'most_frequent'

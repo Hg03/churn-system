@@ -1,5 +1,5 @@
-from dataclasses import dataclass, field
-from typing import Any, Optional
+from dataclasses import dataclass
+from typing import Dict, List
 
 @dataclass
 class paths:
@@ -13,6 +13,7 @@ class paths:
 @dataclass
 class data_ops:
     url: str
+    features: Dict[str, List[str]]
 
 @dataclass
 class model_ops:
