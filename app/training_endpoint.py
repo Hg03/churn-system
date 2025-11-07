@@ -1,5 +1,7 @@
 from churn_system.pipelines.feature_pipeline import FeaturePipeline
 from churn_system.pipelines.training_pipeline import TrainingPipeline
+from churn_system.datamodels.config_model import config_model
+from hydra.core.config_store import ConfigStore
 from omegaconf import DictConfig
 import hydra
 
@@ -14,6 +16,8 @@ def train_features(config: DictConfig) -> None:
 
 @hydra.main(config_path="../conf", config_name="config", version_base=None)
 def main(cfg: DictConfig) -> None:
+    cs = ConfigStore.instance()
+    cs.store(name="config", node=config_model)
     if cfg.pipeline.stage == "full":
         make_features(config=cfg)
         train_features(config=cfg)
