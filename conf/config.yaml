@@ -1,0 +1,4 @@
+defauls:
+  - paths: paths.yaml
+  - data_ops: data_ops.yaml
+  - model_ops: model_ops.yaml

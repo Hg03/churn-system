@@ -1,0 +1,6 @@
+raw: 'data/raw'
+processed: 'data/processed'
+raw_data: 'data/raw/raw.csv'
+processed_data: 'data/processed/processed.csv'
+preprocessor: 'models/preprocessor'
+model: 'models/model'
